@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+
+$color-darkgreen: #090b08;
+$color-whitegreen:#ecffe9;
+$color-black: #000;
+$color-fadedblack: rgba(0, 0, 0, 0.75);
+$color-lightgreen: #c0eea9;
+$color-white: #fff;
+$color-limegreen: #97d279;
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+body {
+  color: $color-darkgreen;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: $color-whitegreen;
+}
+h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h6 {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: $color-darkgreen;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: solid 1px $color-black;
+  transition: all 0.3s ease-in;
+}
+.btn:hover,
+.btn:focus {
+  transform: translate(0px, -2px);
+  -webkit-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  -moz-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  transition: all 0.3s ease-out;
+}
+form {
+  display: flex;
+}
+form input:first-child {
+  flex: 1 0 80%;
+  background-color: transparent;
+}
+form input:last-child {
+  flex: 1 0 20%;
+  border-left: 0;
+  cursor: pointer;
+  background-color: $color-lightgreen;
+  transition: all 0.25s ease;
+}
+#submit:hover {
+  background-color: $color-black;
+  color: $color-white;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  -moz-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  box-shadow: 0px 10px 7px -9px $color-fadedblack;
+}
+input {
+  padding: 10px;
+  border: 1px solid $color-black;
+}
+
+/* Pas alleen de onderstaande regels aan */
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: 20px;
+  background-color: $color-lightgreen;
+  height: 120px;
+  -webkit-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  -moz-box-shadow: 0px 10px 7px -9px $color-fadedblack;
+  box-shadow: 0px 10px 7px -9px $color-fadedblack;
+
+  .brand-logo img {
+    width: auto;
+    padding-top: 20px;
+    height: 7.5em;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+
+  .title.title-right {
+    justify-content: flex-end;
+  }
+}
+
+.line {
+  width: 3em;
+  height: 1px;
+  background-color: $color-black;
+  margin-right: 1em;
+
+  .line.line-right {
+    order: 2;
+    margin-right: 0;
+    margin-left: 1em;
+  }
+}
+
+
+/* Hero Section */
+@use 'constants';
+
+.hero {
+  @include hero()
+}
+
+/* Featured Section */
+.featured {
+  @include featured()
+}
+
+/* About Section */
+.about{
+  @include about()
+}
+
+/* Contact Section */
+.contact {
+  padding: 20px;
+}
+.wrapper .contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-wrapper,
+.contact-wrapper {
+  padding: 20px;
+}
+
+.copy-wrapper {
+  padding-left: 20px;
+}
